@@ -30,6 +30,6 @@ jobs:
 
       - name: Deploy CDN assets to S3 + CloudFront
         run: |
-          aws s3 cp --recursive public ${{ secrets.AWS_S3_BUCKET }}wthr/
+          aws s3 cp --recursive src ${{ secrets.AWS_S3_BUCKET }}wthr/
           aws cloudfront create-invalidation --distribution-id ${{ secrets.PDDYRDBRD_CDN }} --paths "/wthr/*"
 
